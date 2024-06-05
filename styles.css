@@ -65,13 +65,7 @@
     transition: 0.3s;
 
 
-    font-size: 1rem; /* Set an initial font size */
-    display: inline-flex; /* Ensure text stays centered */
-    align-items: center; /* Ensure text stays centered */
-    justify-content: center; /* Ensure text stays centered */
-
-    /* IOS */
-    transform-origin: center center; /* Shrink uniformly from the center */
+   
   }
   
   .btn:hover {

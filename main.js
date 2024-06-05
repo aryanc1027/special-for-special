@@ -4,6 +4,8 @@ const imageTwo = document.querySelector(".image-2");
 const btnYes = document.querySelector(".btn-yes");
 const btnNo = document.querySelector(".btn-no");
 
+let noCount = 0;
+
 function getRandomNumber(min, max) {
   // Calculate the random number between min and max (inclusive)
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -15,15 +17,26 @@ function isIOS() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent);
 }
 
-// Function to shrink the button
-function shrinkButton(button) {
-  const currentWidth = button.offsetWidth;
-  const currentHeight = button.offsetHeight;
-  const shrinkFactor = 0.6; // Shrink by 40%
+function getNoButtonText() {
+  const phrases = [
+    "No",
+    "Are you sure?",
+    "What if I asked really nicely?",
+    "Pretty please",
+    "With a chocolate rice cake on top",
+    "What about a iced Americano",
+    "PLEASE POOKIE",
+    "But :*(",
+    "I am going to die",
+    "Yep im dead",
+    "please babe",
+    ":((((",
+    "PRETTY PLEASE",
+    "muhmuhmuhmuh",
+    "No :(",
+  ];
 
-  button.style.width = `${currentWidth * shrinkFactor}px`;
-  button.style.height = `${currentHeight * shrinkFactor}px`;
-  button.style.fontSize = `${parseFloat(window.getComputedStyle(button).fontSize) * shrinkFactor}px`;
+  return phrases[Math.min(noCount, phrases.length - 1)];
 }
 
 btnNo.addEventListener("mouseover", (event) => {
@@ -51,9 +64,8 @@ btnNo.addEventListener("mouseover", (event) => {
 });
 
 btnNo.addEventListener("click", (e) => {
-  if (isIOS()) {
-    shrinkButton(btnNo);
-  }
+  noCount++;
+  btnNo.textContent = getNoButtonText();
 });
 
 btnYes.addEventListener("click", (e) => {
