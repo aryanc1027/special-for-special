@@ -19,7 +19,7 @@ function isIOS() {
 function shrinkButton(button) {
   const currentWidth = button.offsetWidth;
   const currentHeight = button.offsetHeight;
-  const shrinkFactor = 0.8; // Shrink by 20%
+  const shrinkFactor = 0.6; // Shrink by 40%
 
   button.style.width = `${currentWidth * shrinkFactor}px`;
   button.style.height = `${currentHeight * shrinkFactor}px`;
