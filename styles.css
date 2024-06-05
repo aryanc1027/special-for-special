@@ -84,3 +84,39 @@
     transition: all 0.5s ease;
     z-index: 2;
   }
+
+
+
+  /* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .container {
+      height: auto;
+      padding: 20px;
+    }
+  
+    .btn {
+      width: 100%;
+      max-width: 200px;
+      font-size: 14px;
+    }
+  
+    .header-img,
+    .image-1,
+    .image-2 {
+      max-width: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn {
+      width: 100%;
+      max-width: 150px;
+      font-size: 12px;
+    }
+  
+    .header-img,
+    .image-1,
+    .image-2 {
+      max-width: 150px;
+    }
+  }
