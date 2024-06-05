@@ -19,10 +19,11 @@ function isIOS() {
 function shrinkButton(button) {
   const currentWidth = button.offsetWidth;
   const currentHeight = button.offsetHeight;
-  const shrinkFactor = 0.9; // Shrink by 10%
+  const shrinkFactor = 0.8; // Shrink by 20%
 
   button.style.width = `${currentWidth * shrinkFactor}px`;
   button.style.height = `${currentHeight * shrinkFactor}px`;
+  button.style.fontSize = `${parseFloat(window.getComputedStyle(button).fontSize) * shrinkFactor}px`;
 }
 
 btnNo.addEventListener("mouseover", (event) => {
